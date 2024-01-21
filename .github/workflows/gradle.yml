@@ -1,0 +1,34 @@
+#此工作流程使用未经GitHub认证的操作。
+#它们由第三方提供并受
+#单独的服务条款、隐私政策和支持
+#文档。
+#此工作流将使用Gradle构建一个Java项目，并缓存/恢复任何依赖关系以缩短工作流执行时间
+#有关更多信息，请参见:https://docs . github . com/en/actions/automating-build-and-tests/build-and-testing-Java-with gradle
+
+名字: 带有Gradle的Java CI
+
+在:
+推:
+分支: [ “主人” ]
+拉取请求:
+分支: [ “主人” ]
+
+许可:
+内容: 阅读
+
+工作:
+建设:
+
+连续运行: Ubuntu-最新版
+
+步伐:
+    - 使用: 动作/签出@v3
+    - 名字: 建立JDK 11号
+使用: 操作/设置-java@v3
+随着:
+java版本: '11'
+分布: 特穆林
+    - 名字: 与Gradle一起构建
+使用: grad le/grad le-build-action @ BD 5760595778326 ba7f 1441 BCF 7 e 88 b 49 de 61 a 25# v2.6.0
+随着:
+争论: 建设
